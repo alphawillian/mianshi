@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body>
+		<h1>zhang_guoxin</h1>
+	</body>
+	<script type="text/javascript">
+		//call apply bind
+		function fn1(name,age){
+			console.log(name);
+			console.log(this);
+		}
+		var obj1 = {y:200}
+		fn1.call({x:100},"zhangsan",20);
+		var fn2 = function(name,age){
+			console.log(name);
+			console.log(this);
+		}.bind(obj1)
+		fn2('zhangsan',20);
+		console.log(obj1);
+		
+		function F1(){
+			var a = 100
+			return function(){
+				console.log(a);
+			}
+		}
+		var f1 = F1();
+		var a = 200;
+		f1(); 
+	</script>
+</html>

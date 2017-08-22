@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body>
+		<h1>hello world!</h1>
+	</body>
+	<script type="text/javascript">
+//		var person = {};
+//		Object.defineProperty(person,"name",{
+//		  writable : false,//不可修改
+//		  configurable : false,//不可删除
+//		  enumerable : true,//不可遍历
+//		  value : "zhar"
+//		});
+//		console.log(person.name);//zhar
+//		person.name = "newName";
+//		delete person.name;
+//		console.log(person.name);//zhar
+//		for(item in person){
+//			console.log(item);
+//		}
+		
+		var person = {
+		  firstname : "zharbest",
+		  lastname : "zi"
+		};
+		Object.defineProperty(person,"name",{
+		  get : function(){
+		    return this.firstname + "-"+this.lastname
+		  },
+		  set : function(nName){
+		    if(nName.indexOf("best")!=-1){
+		      this.firstname = nName;
+		    }
+		  }
+		})
+		person.set("1111");
+		console.log(person);
+		
+		var lost = {
+		    loc : "Islands"
+		};  
+		Object.defineProperty(lost, "location", {
+		    get : function () {
+		        return this.loc;
+		    },
+		    set : function (val) {
+		        this.loc = val;
+		    }
+		});
+//		lost.location = "Another island";
+		console.log(lost.location);
+	</script>
+</html>

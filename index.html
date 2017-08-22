@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+</head>
+<body>
+	<h1>hello world</h1>
+</body>
+<script type="text/javascript">
+//	var obj = {};obj.a=100;
+//	var arr = [];arr.a=100;
+//	function fn(){}fn.a=100;
+//	console.log(obj.__proto__);
+//	console.log(arr.__proto__);
+//	console.log(fn.__proto__);
+//	console.log(fn.prototype);
+//	console.log(obj.__proto__ === Object.prototype);
+//	console.log(fn.__proto__ === Function.prototype);
+//	console.log(fn.prototype == Function.prototype);
+	function Foo(name,age){
+		this.name = name;
+	}
+	Foo.prototype.alertName = function(){
+		alert(this.name);
+	}
+	var f = new Foo('zhangsan');
+	f.printName = function(){
+		console.log(this.name);
+	}
+	f.printName();
+//	f.alertName();
+	var str = f.toString();
+	console.log(str);
+	console.log(f instanceof Foo);
+	for (item in f){
+//		高级浏览器已经在 for in 中屏幕了来自原型的属性
+//		但是这里建议加上这个判断,保证程序的健壮性
+//		if(f.hasOwnProperty(item)){
+//			console.log(item);
+//		}
+//		console.log(item);
+	}
+</script>
+</html>
