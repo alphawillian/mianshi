@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body>
+		<h1>william</h1>
+	</body>
+	<script type="text/javascript">
+		var num = 100;
+		var str = "string";
+		var bool = true;
+		var un = undefined;
+		var nu = null;
+		
+		var arr = ["tom","jerry"];
+		var obj = {
+			kind:"dog",
+			yell:"wang"
+		};
+		var fn = function(){
+			console.log("I'm a function");
+		}
+		var reg = /^a+b+$/;
+		var date = new Date();
+		//typeof
+		console.log(typeof num);		//number
+		console.log(typeof str);		//string
+		console.log(typeof bool);		//boolean
+		console.log(typeof un);			//undefined
+		console.log(typeof nu);			//object
+		console.log(typeof arr);		//object
+		console.log(typeof obj);		//object
+		console.log(typeof fn);			//function
+		console.log(typeof reg);		//object
+		console.log(typeof date);		//object
+		//instanceof
+		console.log(num instanceof Number);		//false
+		console.log(str instanceof String);		//false
+		console.log(bool instanceof Boolean);	//false
+//		console.log(un instanceof undefined);	//Uncaught TypeError: Right-hand side of 'instanceof' is not an object
+//		console.log(nu instanceof null);		//Uncaught TypeError: Right-hand side of 'instanceof' is not an object
+		console.log(arr instanceof Array);		//true
+		console.log(obj instanceof Object);		//true
+		console.log(fn instanceof Function);	//true	
+		
+		console.log(date instanceof Date);		//true
+		console.log(reg instanceof RegExp);		//true
+		//constructor
+		console.log("constructor");
+		console.log(num.constructor === Number);	//true
+		console.log(str.constructor === String);	//true
+		console.log(bool.constructor === Boolean);	//true
+		console.log(arr.constructor === Array);		//true
+		console.log(obj.constructor === Object);	//true
+		console.log(fn.constructor === Function);	//true
+		console.log(date.constructor === Date);
+		console.log(reg.constructor === RegExp)
+//		console.log(nu.constructor === null);	//Uncaught TypeError: Cannot read property 'constructor' of null
+//		console.log(un.constructor === undefined);	//Uncaught TypeError: Cannot read property 'constructor' of null
+		
+		console.log("toString");
+		console.log(Object.prototype.toString.call(null));		//[object Null]
+		console.log(Object.prototype.toString.call(undefined));	//[object Undefined]
+		console.log(Object.prototype.toString.call(date));	//[object Date]
+		console.log(Object.prototype.toString.call(reg));	//[object RegExp]
+		
+		
+		console.log(Object.prototype.toString.call(nu) === '[object Null]');	//true
+		console.log(Object.prototype.toString.call(un) === '[object Undefined]');	//true
+		console.log(Object.prototype.toString.call(num) === '[object Number]');	//true
+		console.log(Object.prototype.toString.call(str) === '[object String]');	//true
+		console.log(Object.prototype.toString.call(bool) === '[object Boolean]');	//true
+		console.log(Object.prototype.toString.call(arr) === '[object Array]');	//true
+		console.log(Object.prototype.toString.call(obj) === '[object Object]');	//true
+		console.log(Object.prototype.toString.call(fn) === '[object Function]');	//true
+		
+
+		
+	</script>
+</html>

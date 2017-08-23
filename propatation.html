@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p id="p1">激活</p>
+			<p id="p2">取消</p>
+			<p id="p3">取消</p>
+			<p id="p4">取消</p>
+		</div>
+		<div id="div2">
+			<p id="p5">取消</p>
+			<p id="p6">取消</p>
+		</div>
+		<div id="div3">
+			<a>a1</a>
+			<a href="#">a2</a>
+			<a href="#">a3</a>
+			<a href="#">a4</a>
+			<a href="#">a5</a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var p1 = document.getElementById("p1");
+		var body = document.body;
+		function bindEvent(elem,type,fn){
+			elem.addEventListener(type,fn);
+		}
+//		bindEvent(p1,'click',function(e){
+//			e.stopPropagation();
+//			e.preventDefault();
+//			console.log("激活");
+//		})
+//		bindEvent(body,'click',function(){
+//			console.log("取消");
+//		});
+		var div3 = document.getElementById("div3");
+		div3.addEventListener('click',function(e){
+			var target = e.target;
+			console.log(target);
+			console.log(Object.prototype.toString.call(target));
+			if(target.nodeName === "A"){
+				console.log(target.innerHTML)
+			}
+		})
+		if("a"=="A"){
+			console.log(true);
+		}else{
+			console.log(false);
+		}
+		var animalObj = {
+			name:'dog',
+			age:2
+		}
+		var animalArr = ['cat','dog','bird'];
+		var nu = null;
+		if (Object.prototype.toString.call(bindEvent) === '[object Array]') {
+			console.log(13)
+		}
+		console.log(animalArr instanceof Array);
+		console.log(Object.prototype.toString.call(bindEvent));
+		console.log(Object.prototype.toString.call(null));
+		
+		function add(a,b){
+			console.log(a+b);
+		}
+		function sub(a,b){
+			console.log(a-b);
+		}
+		add.call(sub,3,1);		//sub方法调用add方法
+		add.apply(sub,[3,1]);
+	</script>
+</html>
