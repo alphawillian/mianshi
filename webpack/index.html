@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>webpack</title>
+	</head>
+	<body>
+		<h1>test webpack&CommonJs</h1>
+	</body>
+	<!--<script src="./dist/bundle.js"></script>-->
+	<script>
+//		var arr1 = [];
+//		for(var i1=0;i1<10;i1++){
+//		var a1 = parseInt(Math.random()*20+9)
+//		arr1.push(a1);
+//		}
+//		arr1.sort(compare());
+//		function compare(a,b){
+//		return a - b;
+//		}
+//		for(var i2=0;i2<arr1.length;i2++){
+//		arr1[i2]+=i2+1;
+//		}
+//		console.log(arr1);
+		var num = 1234567;
+		formatMoney(num);
+		function formatMoney(num){
+			var num = num;
+			var str = num.toString();
+			var arr = [];
+			var numLen = str.length;
+			for(var i = numLen+1; i > 1; i--){
+				if(i%3 === 0){
+					arr.push(str.substr(numLen - i,3));
+				}
+			}
+			arr.unshift(str.substr(0,numLen%3));
+			console.log(arr.join(","));
+			
+		}
+	</script>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>require</h1>
+	</body>
+	<!--<script src="js/require.js" data-main="./js/require_main.js" type="text/javascript" charset="utf-8"></script>-->
+	<script src="js/require.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		require(['js/a.js'],function (a){
+			var date = new Date();
+			a.printDate(date);
+		})
+	</script>
+</html>
