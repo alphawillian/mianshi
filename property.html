@@ -38,21 +38,23 @@
 		    }
 		  }
 		})
-		person.set("1111");
+		person.name = "best";
+//		person.set("1111");
 		console.log(person);
+		console.log(person.name);
 		
-		var lost = {
-		    loc : "Islands"
-		};  
-		Object.defineProperty(lost, "location", {
-		    get : function () {
-		        return this.loc;
-		    },
-		    set : function (val) {
-		        this.loc = val;
-		    }
-		});
+//		var lost = {
+//		    loc : "Islands"
+//		};  
+//		Object.defineProperty(lost, "location", {
+//		    get : function () {
+//		        return this.loc;
+//		    },
+//		    set : function (val) {
+//		        this.loc = val;
+//		    }
+//		});
 //		lost.location = "Another island";
-		console.log(lost.location);
+//		console.log(lost.location);
 	</script>
 </html>
